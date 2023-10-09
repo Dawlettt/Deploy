@@ -1,0 +1,10 @@
+{%extends 'base.html'%}
+{%load crispy_forms_tags%}
+{%block title%}New Post{%endblock title%}
+{%block content%}
+<form action="" method="post" enctype="multipart/form-data">{%csrf_token%}
+    {{form.media}}
+    {{form|crispy}}
+    <input type="submit" value="save">
+</form>
+{%endblock content%}

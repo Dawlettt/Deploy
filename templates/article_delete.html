@@ -1,0 +1,17 @@
+{%extends 'base.html'%}
+
+{%load crispy_forms_tags%}
+{%block title%}Delete Post{%endblock title%}
+{%block content%}
+{%if user.is_authenticated%}
+<div>
+    <form action="" method="post">{%csrf_token%}
+        {{form|crispy}}
+        <h1>Delete the post?</h1>
+        <input type="submit" value="delete">
+    </form>
+</div>
+{%else%}
+<p>Sign up to edit a post</p>
+{%endif%}
+{%endblock content%}
